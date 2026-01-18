@@ -65,6 +65,46 @@
     .btn.outline { border: 1px solid #34d399; color: #34d399; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(52,211,153,0.25); }
 
+/* ===== Profile PFP Bar ===== */
+    .pfp-bar {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass);
+      border-radius: 30px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 0 80px rgba(0,245,255,0.15);
+      animation: floatCard 6s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    .pfp {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 6px;
+    }
+
+    .pfp img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .pfp-bar h3 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 2px;
+    }
+
     /* CARD */
     .card {
       background: rgba(255,255,255,0.05);
@@ -155,7 +195,15 @@
       <a class="btn outline" href="#">View Work</a>
     </div>
   </div>
-</section>
+
+<div class="pfp-bar">
+      <div class="pfp">
+        <img src="https://github.com/taimurislamtarif/Portfolio/blob/main/%5B000111%5D.png" alt="%5B000111%5D">
+      </div>
+      <h3>TAIMUR ISLAM TARIF</h3>
+      <p style="text-align:center;color:var(--text-soft)">Digital Mind • Creative Engineer • Future Builder</p>
+    </div>
+  </section>
 
 <!-- ABOUT -->
 <section>
