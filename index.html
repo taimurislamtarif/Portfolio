@@ -127,7 +127,21 @@
     .content { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; position: relative; }
     .timeline ul { list-style: none; margin-top: 20px; }
     .timeline li { display: flex; gap: 14px; margin-bottom: 24px; }
-    .dot { width: 10px; height: 10px; background: #34d399; border-radius: 50%; margin-top: 6px; }
+    
+     .dot{
+  width:10px;
+  height:10px;
+  background:#34d399;
+  border-radius:50%;
+  margin-top:6px;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}
+  70%{box-shadow:0 0 0 10px transparent}
+  100%{box-shadow:0 0 0 0 transparent}
+}
+
     .right .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
     .sub { display: block; color: #9ca3af; font-size: 13px; margin: 6px 0; }
     .list { margin-top: 10px; color: #9ca3af; }
@@ -149,6 +163,14 @@
     .contact-card p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
     .socials { display: flex; justify-content: center; gap: 12px; margin-top: 10px; }
     .socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(52,211,153,0.1); display: flex; align-items: center; justify-content: center; color: #34d399; font-size: 14px; }
+
+ .contact h1 span {
+      color: #34d399;
+    }
+
+    .socials a:hover{
+  transform:translateY(-5px) scale(1.1);
+}
 
  .contact h1 span {
       color: #34d399;
@@ -334,7 +356,7 @@
       UI/UX design, branding, or social media content —
       let’s build something meaningful.
     </p>
-    <a href="#" class="btn primary">LET’S WORK TOGETHER ↗</a>
+    <a href="#" class="btn primary">LET’S WORK TOGETHER ◥</a>
   </div>
 </section>
 
@@ -361,6 +383,7 @@
 
 </body>
 </html>
+
 
 
 
