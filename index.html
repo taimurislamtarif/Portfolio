@@ -185,6 +185,18 @@
 
     /* SCROLL TO TOP */
     #scrollTopBtn { position: fixed; bottom: 120px; right: 50px; background: #34d399; color: #000; border: none; border-radius: 50%; width: 55px; height: 55px; font-size: 33px; display: none; cursor: pointer; align-items: center; justify-content: center; z-index: 999; }
+  
+    /* ===== Scroll Animation ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -226,6 +238,7 @@
 
 <!-- ABOUT -->
 <section>
+  <div class="fade-up">
   <p style="text-align:center;color:#6b7280;margin-bottom:50px">
     Building bridges between design excellence and business success
   </p>
@@ -384,6 +397,7 @@
 
 </body>
 </html>
+
 
 
 
