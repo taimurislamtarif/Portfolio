@@ -10,7 +10,6 @@ const scrollBtn = document.getElementById('scrollTopBtn');
   }, { threshold: 0.2 });
   items.forEach(i => observer.observe(i));
 
-
 const sideBar = document.querySelector('.sidebar');
 const menuBtn = document.querySelector('.menu-icon');
 const closeBtn = document.querySelector('.close-icon');
@@ -32,3 +31,4 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     sideBar.classList.add('close-sidebar');
   });
 });
+
