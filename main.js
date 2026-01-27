@@ -9,3 +9,26 @@ const scrollBtn = document.getElementById('scrollTopBtn');
     });
   }, { threshold: 0.2 });
   items.forEach(i => observer.observe(i));
+
+
+const sideBar = document.querySelector('.sidebar');
+const menuBtn = document.querySelector('.menu-icon');
+const closeBtn = document.querySelector('.close-icon');
+
+menuBtn.addEventListener('click', () => {
+  sideBar.classList.remove('close-sidebar');
+  sideBar.classList.add('open-sidebar');
+});
+
+closeBtn.addEventListener('click', () => {
+  sideBar.classList.remove('open-sidebar');
+  sideBar.classList.add('close-sidebar');
+});
+
+/* auto close when clicking a link */
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    sideBar.classList.remove('open-sidebar');
+    sideBar.classList.add('close-sidebar');
+  });
+});
