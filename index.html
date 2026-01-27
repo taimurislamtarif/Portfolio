@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taimur Islam Tarif | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image" href="favicon.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,196 +14,15 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: Inter, Arial, sans-serif;
-      background: radial-gradient(circle at top, #0e1016, #050b0f);
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    section { padding: 80px 40px; max-width: 1200px; margin: auto; }
-
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 40px;
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(5,11,15,0.75);
-      border-bottom: 1px solid rgba(16,185,129,0.2);
-      z-index: 100;
-      animation: slideDown 0.8s ease;
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    nav h1 { color: #34d399; font-size: 22px; font-weight: 700; }
-    nav .links a { margin-left: 24px; font-size: 14px; color: #9ca3af; transition: color 0.3s ease; }
-    nav .links a:hover { color: #34d399; }
-
-    /* HERO */
-    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
-    .tag { color: #34d399; letter-spacing: 3px; font-size: 11px; margin-bottom: 16px; }
-    h2 { font-size: 44px; font-weight: 700; margin-bottom: 16px; }
-    h2 span { color: #34d399; }
-    .subtitle { color: #9ca3af; font-size: 18px; margin-bottom: 20px; }
-    .desc { color: #6b7280; max-width: 520px; }
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      margin-right: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn.primary { background: #34d399; color: #000; }
-    .btn.outline { border: 1px solid #34d399; color: #34d399; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(52,211,153,0.25); }
-
-/* ===== Profile PFP Bar ===== */
-    .pfp-bar {
-      background: var(--bg-card);
-      backdrop-filter: var(--glass);
-      border-radius: 30px;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      box-shadow: 0 0 80px rgba(0,245,255,0.15);
-      animation: floatCard 6s ease-in-out infinite;
-    }
-
-    @keyframes floatCard {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-16px); }
-    }
-
-    .pfp {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      padding: 6px;
-    }
-
-    .pfp img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      background: #000;
-    }
-
-    .pfp-bar h3 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 2px;
-    }
-
-    /* CARD */
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 24px;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.35); }
-
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-    .highlight { margin-top: 14px; color: #34d399; font-weight: 500; }
-
-    /* EXPERIENCE */
-    .experience .header { text-align: center; margin-bottom: 60px; }
-    .experience h1 { font-size: 40px; margin: 10px 0; }
-    .experience h1 span { color: #34d399; }
-    .experience p { color: #9ca3af; }
-    .content { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; position: relative; }
-    .timeline ul { list-style: none; margin-top: 20px; }
-    .timeline li { display: flex; gap: 14px; margin-bottom: 24px; }
-    
-     .dot{
-  width:10px;
-  height:10px;
-  background:#34d399;
-  border-radius:50%;
-  margin-top:6px;
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}
-  70%{box-shadow:0 0 0 10px transparent}
-  100%{box-shadow:0 0 0 0 transparent}
-}
-
-    .right .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
-    .sub { display: block; color: #9ca3af; font-size: 13px; margin: 6px 0; }
-    .list { margin-top: 10px; color: #9ca3af; }
-    .list li { margin-bottom: 6px; }
-    .skills .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-    .skills .tags span { padding: 6px 12px; border-radius: 20px; background: rgba(52,211,153,0.1); color: #34d399; font-size: 12px; transition: transform 0.25s ease, background 0.25s ease; }
-    .skills .tags span:hover { transform: scale(1.08); background: rgba(52,211,153,0.2); }
-    .focus { margin-top: 16px; font-size: 14px; color: #9ca3af; }
-
-    /* CONTACT */
-    .contact { text-align: center; }
-    .contact-grid { margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 24px; }
-    .contact-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 30px 20px; transition: transform 0.35s ease; }
-    .contact-card:hover { transform: translateY(-10px); }
-    .icon-box { width: 46px; height: 46px; border-radius: 50%; background: rgba(52,211,153,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; transition: transform 0.4s ease; }
-    .contact-card:hover .icon-box { transform: scale(1.15) rotate(5deg); }
-    .icon-box svg { width: 20px; height: 20px; stroke: #34d399; }
-    .contact-card h4 { font-size: 16px; margin-bottom: 8px; }
-    .contact-card p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
-    .socials { display: flex; justify-content: center; gap: 12px; margin-top: 10px; }
-    .socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(52,211,153,0.1); display: flex; align-items: center; justify-content: center; color: #34d399; font-size: 14px; transition:.3s;}
-
-    .socials a:hover{
-  transform:translateY(-5px) scale(1.1);
-}
-
-    /* CTA */
-    .footer-cta { max-width: 720px; margin: 70px auto 0; padding: 50px 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 26px; }
-    .footer-cta h3 { font-size: 26px; margin-bottom: 12px; }
-    .footer-cta p { color: #9ca3af; margin-bottom: 26px; }
-
-    /* FOOTER */
-    footer { border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 40px; display: flex; justify-content: space-between; color: #6b7280; font-size: 14px; margin-top: 80px; }
-
-    @media (max-width: 900px) { .hero, .content, .about-grid, .right .row { grid-template-columns: 1fr; } }
-
-    /* SCROLL TO TOP */
-    #scrollTopBtn { position: fixed; bottom: 120px; right: 50px; background: #34d399; color: #000; border: none; border-radius: 50%; width: 55px; height: 55px; font-size: 33px; display: none; cursor: pointer; align-items: center; justify-content: center; z-index: 999; }
-  
-    /* ===== Scroll Animation ===== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
 </head>
+
+
+
+
 
 <body>
 
+  
 <nav>
   <h1>Taimur Tarif</h1>
   <div class="links">
@@ -333,7 +154,7 @@
         <svg fill="none" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2 5.2 2 2 0 0 1 4 3h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l.7-.7a2 2 0 0 1 2.1-.5c.8.3 1.6.5 2.5.6a2 2 0 0 1 1.7 2z" stroke-width="2"/></svg>
       </div>
       <h4>Direct Lines</h4>
-      <p>+8801<br>+8801</p>
+      <p>+8801954494433<br>+8801</p>
     </div>
 
     <div class="contact-card">
@@ -384,22 +205,11 @@
 
 <button id="scrollTopBtn" onclick="scrollToTop()"><ion-icon name="arrow-up-sharp"></ion-icon></button>
 
-<script>
-  const scrollBtn = document.getElementById('scrollTopBtn');
-  window.onscroll = () => { scrollBtn.style.display = window.scrollY > 200 ? 'flex' : 'none'; };
-  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-
-  const items = document.querySelectorAll('.fade-up,.fade-left,.fade-right');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('show');
-    });
-  }, { threshold: 0.2 });
-  items.forEach(i => observer.observe(i));
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>
+
 
 
 
