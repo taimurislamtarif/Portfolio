@@ -95,6 +95,19 @@
       letter-spacing: 2px;
     }
 
+/* ===== FADE ANIMATIONS ===== */
+.fade-up,.fade-left,.fade-right{
+  opacity:0;
+  transition:all .8s ease
+}
+.fade-up{transform:translateY(40px)}
+.fade-left{transform:translateX(-40px)}
+.fade-right{transform:translateX(40px)}
+.show{
+  opacity:1;
+  transform:translate(0,0)
+}
+
     /* CARD */
     .card {
       background: rgba(255,255,255,0.05);
