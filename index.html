@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taimur Islam Tarif | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image" href="favicon.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,6 +12,421 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top, #0e1016, #050b0f);
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    section { padding: 80px 40px; max-width: 1200px; margin: auto; }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 40px;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(5,11,15,0.75);
+      border-bottom: 1px solid rgba(16,185,129,0.2);
+      z-index: 100;
+      animation: slideDown 0.8s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+nav li button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  
+  cursor: pointer;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* underline */
+nav li button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #34d399, #34d399);
+  transition: width 0.35s ease;
+}
+
+/* active */
+nav li.active button {
+  color: #34d399;
+}
+
+nav li.active button::after {
+  width: 100%;
+}
+
+    nav h1 { color: #34d399; font-size: 22px; font-weight: 700; }
+    nav .links a { margin-left: 24px; font-size: 14px; color: #9ca3af; transition: color 0.3s ease; }
+    nav .links a:hover { color: #34d399; }
+
+    /* HERO */
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+    .tag { color: #34d399; letter-spacing: 3px; font-size: 11px; margin-bottom: 16px; }
+    h2 { font-size: 44px; font-weight: 700; margin-bottom: 16px; }
+    h2 span { color: #34d399; }
+    .subtitle { color: #9ca3af; font-size: 18px; margin-bottom: 20px; }
+    .desc { color: #6b7280; max-width: 520px; }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-right: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn.primary { background: #34d399; color: #000; }
+    .btn.outline { border: 1px solid #34d399; color: #34d399; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(52,211,153,0.25); }
+
+/* ===== PROFILE CARD (ABOUT IMAGE STYLE APPLIED) ===== */
+.pfp-bar{
+  display:flex;
+  justify-content:center
+}
+
+.hero-photo{
+  width:300px;
+  background:#fff;
+  padding:12px;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
+  box-shadow: 0 0 80px rgba(0,245,255,0.15);
+      animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+.hero-photo img{
+  width:100%;
+  border-radius:10px;
+  display:block
+}
+
+    /* ===== ABOUT DOSSIER STYLE ===== */
+.about-dossier {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(52,211,153,0.15);
+  border-radius: 26px;
+  padding: 50px;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+
+}
+
+.about-dossier-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+}
+
+/* Profile card */
+.dossier-photo {
+  background: #f1f1ec;
+  border-radius: 18px;
+  padding: 12px;
+  transform: rotate(-2deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease;
+}
+
+.dossier-photo:hover {
+  transform: rotate(0deg) translateZ(20px);
+}
+
+.dossier-photo img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* Info list */
+.dossier-info {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.dossier-info div {
+  margin-bottom: 8px;
+}
+
+/* Paper note blocks */
+.dossier-notes {
+  display: flex;
+  gap: 18px;
+  margin: 26px 0;
+  flex-wrap: wrap;
+}
+
+.note-card {
+  padding: 16px 18px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease;
+}
+
+.note-card.green {
+  background: rgba(52,211,153,0.18);
+  color: #34d399;
+}
+
+.note-card.dark {
+  background: rgba(255,255,255,0.08);
+  color: #e5e7eb;
+}
+
+.note-card:hover {
+  transform: translateY(-6px) translateZ(20px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-dossier-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    /* CARD */
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 24px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.35); }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .highlight { margin-top: 14px; color: #34d399; font-weight: 500; }
+
+    /* EXPERIENCE */
+    .experience .header { text-align: center; margin-bottom: 60px; }
+    .experience h1 { font-size: 40px; margin: 10px 0; }
+    .experience h1 span { color: #34d399; }
+    .experience p { color: #9ca3af; }
+    .content { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; position: relative; }
+    .timeline ul { list-style: none; margin-top: 20px; }
+    .timeline li { display: flex; gap: 14px; margin-bottom: 24px; }
+    
+     .dot{
+  width:10px;
+  height:10px;
+  background:#34d399;
+  border-radius:50%;
+  margin-top:6px;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}
+  70%{box-shadow:0 0 0 10px transparent}
+  100%{box-shadow:0 0 0 0 transparent}
+}
+
+    .right .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .sub { display: block; color: #9ca3af; font-size: 13px; margin: 6px 0; }
+    .list { margin-top: 10px; color: #9ca3af; }
+    .list li { margin-bottom: 6px; }
+    .skills .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .skills .tags span { padding: 6px 12px; border-radius: 20px; background: rgba(52,211,153,0.1); color: #34d399; font-size: 12px; transition: transform 0.25s ease, background 0.25s ease; }
+    .skills .tags span:hover { transform: scale(1.08); background: rgba(52,211,153,0.2); }
+    .focus { margin-top: 16px; font-size: 14px; color: #9ca3af; }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+    .contact-grid { margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 24px; }
+    .contact-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 30px 20px; transition: transform 0.35s ease; }
+    .contact-card:hover { transform: translateY(-10px); }
+    .icon-box { width: 46px; height: 46px; border-radius: 50%; background: rgba(52,211,153,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; transition: transform 0.4s ease; }
+    .contact-card:hover .icon-box { transform: scale(1.15) rotate(5deg); }
+    .icon-box svg { width: 20px; height: 20px; stroke: #34d399; }
+    .contact-card h4 { font-size: 16px; margin-bottom: 8px; }
+    .contact-card p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
+    .socials { display: flex; justify-content: center; gap: 12px; margin-top: 10px; }
+    .socials a { width: 36px; height: 36px; border-radius: 50%; background: rgba(52,211,153,0.1); display: flex; align-items: center; justify-content: center; color: #34d399; font-size: 14px; transition:.3s;}
+
+    .socials a:hover{
+  transform:translateY(-5px) scale(1.1);
+}
+
+    /* CTA */
+    .footer-cta { max-width: 720px; margin: 70px auto 0; padding: 50px 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 26px; }
+    .footer-cta h3 { font-size: 26px; margin-bottom: 12px; }
+    .footer-cta p { color: #9ca3af; margin-bottom: 26px; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 40px; display: flex; justify-content: space-between; color: #6b7280; font-size: 14px; margin-top: 80px; }
+
+    @media (max-width: 900px) { .hero, .content, .about-grid, .right .row { grid-template-columns: 1fr; } }
+
+    /* SCROLL TO TOP */
+    #scrollTopBtn { position: fixed; bottom: 120px; right: 50px; background: #34d399; color: #000; border: none; border-radius: 50%; width: 55px; height: 55px; font-size: 33px; display: none; cursor: pointer; align-items: center; justify-content: center; z-index: 999; }
+  
+    /* ===== Scroll Animation ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== MOBILE SIDEBAR ===== */
+
+.menu-icon{
+  font-size: 32px;
+  cursor: pointer;
+  color: #34d399;
+  display: none;
+}
+
+.sidebar{
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 70%;
+  width: 0;
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  box-shadow: 0 0 25px rgba(52,211,153,0.4);
+  opacity: 0;
+  border-bottom-left-radius: 100%;
+  overflow: hidden;
+}
+
+.close-icon{
+  font-size: 42px;
+  color: #9ca3af;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.sidebar ul{
+  padding: 40px 30px;
+}
+
+.sidebar ul li{
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.sidebar ul li a{
+  font-size: 28px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.social-sidebar{
+  padding: 0 30px;
+  margin-top: 40px;
+  display: flex;
+  gap: 18px;
+}
+
+.social-sidebar a{
+  font-size: 30px;
+  color: #34d399;
+}
+
+/* open animation */
+.sidebar.open-sidebar{
+  animation: openSideBarAnimation 1.2s forwards;
+}
+
+@keyframes openSideBarAnimation{
+  to{
+    width: 80%;
+    opacity: 1;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+/* close animation */
+.sidebar.close-sidebar{
+  animation: closeSideBarAnimation 1.2s forwards;
+}
+
+@keyframes closeSideBarAnimation{
+  from{
+    width: 80%;
+    opacity: 1;
+    bottom: 0;
+    border-radius: 0;
+  }
+  to{
+    width: 0;
+    opacity: 0;
+    bottom: 70%;
+    border-bottom-left-radius: 100%;
+  }
+}
+
+/* show menu icon on mobile */
+@media (max-width: 768px){
+  nav .links{
+    display: none;
+  }
+  .menu-icon{
+    display: block;
+  }
+}
+
+/* ===== FADE ANIMATIONS ===== */
+.fade-up,.fade-left,.fade-right{
+  opacity:0;
+  transition:all .8s ease
+}
+.fade-up{transform:translateY(40px)}
+.fade-left{transform:translateX(-40px)}
+.fade-right{transform:translateX(40px)}
+.show{
+  opacity:1;
+  transform:translate(0,0)
+}
+
+  </style>
 </head>
 
 <body>
@@ -21,13 +434,13 @@
 <nav>
   <h1>Taimur Tarif</h1>
 
-  <div class="links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#resume">Resume</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <ul>
+    <li class="active"><button data-target="home">Home</button></li>
+    <li><button data-target="about">About</button></li>
+    <li><button data-target="resume">Resume</button></li>
+    <li><button data-target="portfolio">Protfolio</button></li>
+    <li><button data-target="contact">Contact</button></li>
+  </ul>
 
   <div class="menu-icon">
     <ion-icon name="menu-outline"></ion-icon>
@@ -66,24 +479,23 @@
       Building clean, modern digital experiences where strong design meets real business value.
     </p>
     <div style="margin-top:30px">
-      <a class="btn primary" href="#contact">Let’s Connect</a>
+      <a class="btn primary" href="#">Let’s Connect</a>
       <a class="btn outline" href="#">View Work</a>
     </div>
   </div>
-  
-<div class="pfp-bar fade-right">
-  <div class="hero-photo">
-    <img src="my-photo.png" alt="Taimur Islam Tarif">
-  </div>
-</div>
-  </section>
 
-<!-- ABOUT -->
-<section id="about">
+  <div class="pfp-bar fade-right">
+    <div class="hero-photo">
+      <img src="my-photo.png" alt="Taimur Islam Tarif">
+    </div>
+  </div>
+</section>
+
+  <!-- ABOUT -->
+   <section id="about">
   <div class="fade-up">
-    <small class="tag" style="text-align:center;display:block">ABOUT ME</small>
     <h2 style="text-align:center;margin-bottom:20px">
-      Design with <span>Purpose</span>
+      About <span>Me</span>
     </h2>
 
     <p style="text-align:center;color:#9ca3af;max-width:720px;margin:0 auto 60px">
@@ -92,6 +504,67 @@
       creativity, strategy, and execution.
     </p>
 
+<section id="about">
+  <div class="fade-up">
+
+    <div class="about-dossier">
+      <div class="about-dossier-grid">
+
+        <!-- LEFT -->
+        <div>
+          <div class="dossier-photo">
+            <img src="my-photo.png" alt="Taimur Islam Tarif">
+          </div>
+
+          <div class="dossier-info">
+            <div><strong>Name:</strong> Taimur Islam Tarif</div>
+            <div><strong>Age:</strong> 17+</div>
+            <div><strong>Height:</strong> 176 cm</div>
+            <div><strong>Location:</strong> Dhaka, Bangladesh</div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+          <h3 style="margin-bottom:12px">About Me</h3>
+          <p style="color:#9ca3af;max-width:620px">
+            I focus on building modern digital experiences that combine visual clarity,
+            user psychology, and business strategy. My work sits at the intersection
+            of design, communication, and execution.
+          </p>
+
+          <div class="dossier-notes">
+            <div class="note-card green">
+              UI / UX Design<br>
+              Visual Systems<br>
+              Motion Thinking
+            </div>
+
+            <div class="note-card dark">
+              Account Management<br>
+              Client Strategy<br>
+              Team Coordination
+            </div>
+
+            <div class="note-card green">
+              Branding<br>
+              Digital Identity<br>
+              Growth Focus
+            </div>
+          </div>
+
+          <p style="color:#6b7280;font-size:14px">
+            Current focus: balancing creative leadership with structured delivery
+            for scalable results.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
     <div class="about-grid">
       <div class="card">
         <h3>Who I Am</h3>
@@ -111,6 +584,58 @@
           <li>Client communication and project flow</li>
           <li>Balancing creativity with business goals</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="fade-up">
+    <small class="tag" style="text-align:center;display:block">EDUCATION</small>
+    <h2 style="text-align:center;margin-bottom:20px">
+      Academic <span>Journey</span>
+    </h2>
+
+    <p style="text-align:center;color:#9ca3af;max-width:700px;margin:0 auto 60px">
+      A structured foundation that supports my creative and professional growth.
+    </p>
+
+    <div class="about-grid">
+      <div class="card">
+        <h3>Secondary School Certificate (SSC)</h3>
+        <span class="sub">Expected 2026</span>
+        <p style="color:#9ca3af;margin-top:10px">
+          Building a strong academic base while actively developing skills
+          in design, technology, and communication.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Higher Secondary Certificate (HSC)</h3>
+        <span class="sub">Upcoming</span>
+        <p style="color:#9ca3af;margin-top:10px">
+          Planned focus on advanced studies alongside continued professional
+          and creative work.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Graduation</h3>
+        <span class="sub">Future Goal</span>
+        <p style="color:#9ca3af;margin-top:10px">
+          Long-term academic goal aligned with digital design, technology,
+          and business strategy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Self-Learning & Practice</h3>
+        <span class="sub">Ongoing</span>
+        <p style="color:#9ca3af;margin-top:10px">
+          Continuous learning through real projects, client work, design systems,
+          UI trends, and hands-on experimentation.
+        </p>
       </div>
     </div>
   </div>
@@ -238,23 +763,71 @@
 
 <button id="scrollTopBtn" onclick="scrollToTop()"><ion-icon name="arrow-up-sharp"></ion-icon></button>
 
-<script src="main.js"></script>
+<script>
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.onscroll = () => { scrollBtn.style.display = window.scrollY > 200 ? 'flex' : 'none'; };
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
+  const items = document.querySelectorAll('.fade-up,.fade-left,.fade-right');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  items.forEach(i => observer.observe(i));
+</script>
+
+<script>
+  const sideBar = document.querySelector('.sidebar');
+const menuBtn = document.querySelector('.menu-icon');
+const closeBtn = document.querySelector('.close-icon');
+
+menuBtn.addEventListener('click', () => {
+  sideBar.classList.remove('close-sidebar');
+  sideBar.classList.add('open-sidebar');
+});
+
+closeBtn.addEventListener('click', () => {
+  sideBar.classList.remove('open-sidebar');
+  sideBar.classList.add('close-sidebar');
+});
+
+/* auto close when clicking a link */
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    sideBar.classList.remove('open-sidebar');
+    sideBar.classList.add('close-sidebar');
+  });
+});
+
+</script>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll("nav li");
+
+/* Scroll active */
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const offset = section.offsetTop - 160;
+    if (window.scrollY >= offset) {
+      current = section.id;
+    }
+  });
+
+  navItems.forEach(li => {
+    li.classList.remove("active");
+    const target = li.querySelector("button").dataset.target;
+    if (target === current) {
+      li.classList.add("active");
+    }
+  });
+});
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
